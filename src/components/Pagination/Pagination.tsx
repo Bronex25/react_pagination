@@ -19,7 +19,8 @@ export const Pagination: React.FC<PropsForPag> = ({
             className="page-link"
             href="#prev"
             aria-disabled={currentPage === 1 ? 'true' : 'false'}
-            onClick={() => {
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+              e.preventDefault();
               if (currentPage > 1) {
                 onPageChange(currentPage - 1);
               }
@@ -53,7 +54,8 @@ export const Pagination: React.FC<PropsForPag> = ({
             className="page-link"
             href="#next"
             aria-disabled={currentPage === maxPages ? 'true' : 'false'}
-            onClick={() => {
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+              e.preventDefault();
               if (currentPage < maxPages) {
                 onPageChange(currentPage + 1);
               }
