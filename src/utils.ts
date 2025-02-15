@@ -7,3 +7,9 @@ export function getNumbers(from: number, to: number): number[] {
 
   return numbers;
 }
+
+export interface PropsForPag {
+  maxPages: number;
+  currentPage: number;
+  onPageChange: (page: number) => void;
+}
